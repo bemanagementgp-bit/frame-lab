@@ -2,7 +2,7 @@
 
 Put any photo inside a real-looking frame: Polaroid-style instant prints, phone / tablet / laptop screens, a gallery frame with mat, a DSLR camera display or a 35 mm film strip. Every frame is drawn procedurally on a `<canvas>` in the user's browser (no image assets, nothing uploaded).
 
-**Live:** https://__SITE_URL__/ (placeholder – replaced after deploy)
+**Live:** https://framelab-tool.vercel.app/ (placeholder – replaced after deploy)
 
 ## Features
 
@@ -54,7 +54,7 @@ No build step. Open the printed URL.
 Deploy the folder as a static site on Vercel (`vercel --prod`). After the first deploy, replace the placeholder everywhere:
 
 ```bash
-sed -i 's/__SITE_URL__/framelab-tool.vercel.app/g' index.html privacy.html terms.html robots.txt sitemap.xml config.js README.md
+sed -i 's/framelab-tool.vercel.app/framelab-tool.vercel.app/g' index.html privacy.html terms.html robots.txt sitemap.xml config.js README.md
 ```
 
 Then run `node _shared/apply-brand.js frame-lab` from the repo root to inject the shared header, hero, footer and lead card.
