@@ -249,6 +249,8 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
 
 
 
+
+
 /* ===== Frame Lab – app styles ===== */
 .studio-canvas canvas{outline:none;border-radius:4px;cursor:grab;touch-action:pan-y pinch-zoom}
 .studio-canvas canvas.dragging{cursor:grabbing}
