@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foto-Mockup-Generator für Polaroid, Smartphone &amp; Kamera (kostenlos) | Frame Lab</title>
+  <meta name="description" content="Kostenloser Polaroid-Foto-Maker und Smartphone-Mockup-Generator. Setze jedes Foto in ein Sofortbild, ein Smartphone, Tablet, einen Laptop, Galerierahmen, ein Kamera-LCD oder einen Filmstreifen. Ohne Upload.">
+  <link rel="canonical" href="https://framelab-tool.vercel.app/de/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://framelab-tool.vercel.app/de/">
+  <meta property="og:title" content="Foto-Mockup-Generator für Polaroid, Smartphone & Kamera (kostenlos) | Frame Lab">
+  <meta property="og:description" content="Zieh ein Foto hierher und setze es in einen Abzug im Polaroid-Stil, ein Smartphone, einen Laptop, einen Galerierahmen, ein Kameradisplay oder einen 35-mm-Filmstreifen. Kostenlos, privat, läuft in deinem Browser.">
+  <meta property="og:image" content="https://framelab-tool.vercel.app/favicon.svg">
+  <meta property="og:site_name" content="Frame Lab">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Foto-Mockup-Generator für Polaroid, Smartphone & Kamera (kostenlos)">
+  <meta name="twitter:description" content="Setze dein Foto in Sofortbilder, Geräte und Galerierahmen. Ohne Upload, ohne Anmeldung, Export als PNG und JPG.">
+  <meta name="twitter:image" content="https://framelab-tool.vercel.app/favicon.svg">
+  <meta name="theme-color" content="#050403">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Frame Lab">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Frame Lab – Foto-Mockup-Generator für Polaroid, Smartphone & Kamera","url":"https://framelab-tool.vercel.app/","applicationCategory":"DesignApplication","operatingSystem":"Any (web browser)","browserRequirements":"Requires JavaScript","description":"Setze jedes Foto in ein Sofortbild im Polaroid-Stil, einen Smartphone-, Tablet- oder Laptop-Bildschirm, einen Galerierahmen mit Passepartout, ein DSLR-Kameradisplay oder einen 35-mm-Filmstreifen. Alles wird lokal in deinem Browser gerendert.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"featureList":["8 kostenlose Rahmen: Sofortbild, Sofortbild mini, Smartphone, Tablet, Laptop, Galerierahmen, Kameradisplay, Filmstreifen","Handschriftliche Bildunterschrift und Datumsstempel im Film-Stil","Steuerung für Zoom, Verschieben, Spiegeln und Neigen","Hintergründe: transparent, einfarbig, Verlauf, weichgezeichnetes Foto, Wand und Schreibtisch","Ausgabegrößen quadratisch, Hochformat, Querformat und Story","Export als PNG oder JPG, in die Zwischenablage kopieren – nichts wird hochgeladen"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist Frame Lab kostenlos?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die acht Basis-Rahmen, alle Hintergründe, Bildunterschrift und Datumsstempel, Zoom, Verschieben, Neigung und Export als PNG oder JPG in 1x sind kostenlos und ohne Anmeldung. Kostenlose Exporte tragen ein kleines Badge „Frame Lab · free“. Das optionale einmalige Pro-Upgrade entfernt es und bietet Export in 2x, sechs Premium-Rahmen, Stapel-Export als ZIP und gespeicherte Presets."}},{"@type":"Question","name":"Wie erstelle ich ein Foto im Polaroid-Stil?","acceptedAnswer":{"@type":"Answer","text":"Wähle den Rahmen Sofortbild, zieh dein Foto hinein und verschiebe es, um das quadratische Fenster zuzuschneiden. Füge im unteren Rand eine kurze handschriftliche Bildunterschrift hinzu, neige den Rahmen um ein paar Grad und wähle einen Wand- oder Schreibtisch-Hintergrund. Der Rahmen nutzt das klassische Abzugsverhältnis 1:1.2 mit breiterem unterem Rand, sodass das Ergebnis wie ein echtes Sofortbild aussieht."}},{"@type":"Question","name":"Muss ich mein Foto hochladen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Frame Lab zeichnet jeden Rahmen mit der HTML5-Canvas-API in deinem Browser. Dein Foto verlässt nie dein Gerät, nichts wird auf einem Server gespeichert, und das Tool funktioniert auch offline, sobald die Seite geladen ist."}},{"@type":"Question","name":"Welche Rahmen und Geräte sind enthalten?","acceptedAnswer":{"@type":"Answer","text":"Kostenlos: Sofortbild, Sofortbild mini, Smartphone mit Dynamic Island, Tablet, Laptop, Galerierahmen mit einstellbarem Passepartout, DSLR-Kameradisplay mit bearbeitbarer Statuszeile und ein 35-mm-Filmstreifen mit einem bis drei Fotos. Pro bietet zusätzlich einen schwebenden Abzug mit Klebeband, gestapelte Abzüge, einen Schreibtisch-Monitor, eine Plakatwand in Perspektive, ein Magazin-Cover und einen Vintage-Röhrenfernseher."}},{"@type":"Question","name":"Kann ich das Wasserzeichen entfernen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die kostenlose Version fügt unten rechts ein kleines Badge „Frame Lab · free“ hinzu. Frame Lab Pro, ein Einmalkauf, entfernt das Badge aus jedem Export, auch aus Downloads in 2x und Stapel-ZIPs."}},{"@type":"Question","name":"In welcher Größe sollte ich für Instagram, Etsy oder ein Portfolio exportieren?","acceptedAnswer":{"@type":"Answer","text":"Nutze Quadratisch (2000 × 2000) für Instagram-Feed-Posts und Etsy-Vorschaubilder, Hochformat (1600 × 2000, 4:5) für Feed-Posts, die mehr Bildschirmfläche einnehmen, Story (1080 × 1920) für Instagram- und TikTok-Stories und Querformat (2000 × 1500) für Portfolioseiten, Blog-Titelbilder und Präsentationen. Exportiere in 2x (Pro) für Retina-Bildschirme oder Druck."}}]}</script>
+  <script src="/config.js"></script>
+  <script src="/i18n.js"></script>
+  <script src="/consent.js"></script>
+  <script src="/monetize.js"></script>
+  <script src="/studio.js"></script>
+  <!-- hreflang:start -->
+  <meta name="bm-langs" content="en,es,pt,fr,de,it">
+  <link rel="alternate" hreflang="en" href="https://framelab-tool.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://framelab-tool.vercel.app/es/">
+  <link rel="alternate" hreflang="pt" href="https://framelab-tool.vercel.app/pt/">
+  <link rel="alternate" hreflang="fr" href="https://framelab-tool.vercel.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://framelab-tool.vercel.app/de/">
+  <link rel="alternate" hreflang="it" href="https://framelab-tool.vercel.app/it/">
+  <link rel="alternate" hreflang="x-default" href="https://framelab-tool.vercel.app/">
+  <!-- hreflang:end -->
+  <meta property="og:locale" content="de_DE">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="navbar">
+    <a class="brand" href="/de/" aria-label="Frame Lab Startseite">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text"><span class="brand-name">Frame Lab</span><span class="brand-desc">Fotos in echten Rahmen &amp; Geräten</span></span>
+    </a>
+    <nav class="nav" aria-label="Hauptmenü">
+      <details class="more-tools">
+        <summary class="btn btn-ghost btn-sm" aria-label="Weitere Tools"><span class="mt-label">Weitere Tools</span> ▾</summary>
+        <div class="menu">
+          <a href="https://quickinvoice-tool.vercel.app"><span class="mi">Q</span>QuickInvoice<small>Rechnungen</small></a>
+          <a href="https://ratecalc-tool.vercel.app"><span class="mi">R</span>RateCalc<small>Freelancer-Stundensätze</small></a>
+          <a href="https://qrforge-tool.vercel.app"><span class="mi">Q</span>QRForge<small>QR-Codes</small></a>
+          <a href="https://squish-tool.vercel.app"><span class="mi">S</span>Squish<small>Bildkomprimierung</small></a>
+          <a href="https://growthcalc-tool.vercel.app"><span class="mi">G</span>GrowthCalc<small>Zinseszins</small></a>
+          <a href="https://subnetkit-tool.vercel.app"><span class="mi">N</span>SubnetKit<small>IP-Subnetze</small></a>
+          <a href="https://shotstudio-tool.vercel.app"><span class="mi">S</span>Screenshot Studio<small>Screenshot-Mockups</small></a>
+          <a href="https://mockuplab-tool.vercel.app"><span class="mi">M</span>Social Mockup Lab<small>Chat- & Post-Mockups</small></a>
+          <a href="https://carouselmaker-tool.vercel.app"><span class="mi">C</span>Carousel Maker<small>Karussell-Slides</small></a>
+          <a href="https://creativeresize-tool.vercel.app"><span class="mi">R</span>Creative Resize<small>Social-Media-Formate</small></a>
+          <a href="https://framelab-tool.vercel.app" class="current"><span class="mi">F</span>Frame Lab<small>Fotorahmen & Mockups</small></a>
+          <a href="https://giveaway-tool.vercel.app"><span class="mi">G</span>Giveaway Picker<small>Instagram-Gewinnspiele</small></a>
+          <a href="https://iplookup-tool.vercel.app"><span class="mi">I</span>IP Lookup<small>IP-Abfrage</small></a>
+          <a href="https://sizeconverter-tool.vercel.app"><span class="mi">Z</span>Size Converter<small>Bild- & Videogrößen ändern</small></a>
+        </div>
+      </details>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="brand-by">von <b>Be Management</b></span>
+      <button class="btn btn-sm hidden" id="installBtn" data-action="install" title="Installiere dieses Tool als App">⤓ Installieren</button>
+      <span class="lang-switch"><select id="langSelect" aria-label="Language" translate="no"><option value="en">EN</option></select></span>
+      <button class="btn btn-primary btn-sm" data-action="pro" data-arg="nav">Pro</button><button class="btn icon-btn btn-sm" data-action="theme" aria-label="Design wechseln">◐</button>
+    </nav>
+    </div>
+  </div>
+</header>
+
+<section class="hero container">
+  <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Be Management Tools · Kreativ · Rahmen</span>
+  <h1>Setze dein Foto in ein Polaroid, Smartphone oder eine Kamera</h1>
+  <p class="tagline">Zieh ein Foto hierher und setze es in ein Sofortbild, einen Smartphone-Bildschirm, einen Laptop, einen Galerierahmen oder ein Kameradisplay. Exportiere ein sauberes PNG.</p>
+  <div class="badges">
+  <span class="badge">100 % kostenlos</span>
+  <span class="badge">Ohne Anmeldung</span>
+  <span class="badge">Läuft in deinem Browser</span>
+  <span class="badge">Nichts wird hochgeladen</span>
+  <span class="badge">Export als PNG &amp; JPG</span>
+  </div>
+</section>
+
+<main class="container">
+  <div class="studio">
+    <div class="studio-stage">
+      <div class="studio-canvas" id="stage">
+        <canvas id="preview" tabindex="0" aria-label="Mockup-Vorschau. Ziehen, um das Foto im Rahmen zu verschieben, Pfeiltasten zum Feinjustieren, Ctrl+C zum Kopieren."></canvas>
+        <div class="studio-drop" id="drop" tabindex="0" role="button" aria-label="Zieh ein Foto hierher oder drücke Enter, um eine Datei auszuwählen">
+          <div class="box"><div class="ic">⬆</div><b>Foto hierher ziehen oder zum Hochladen klicken</b><small>PNG, JPG, WebP · mit Ctrl+V einfügen · nichts wird hochgeladen</small></div>
+        </div>
+      </div>
+      <div class="stage-meta">
+        <span id="sizeInfo">Ausgabe: <b>—</b></span>
+        <span>Zieh das Foto, um es neu zu positionieren · <span class="kbd">Ctrl</span>+<span class="kbd">S</span> herunterladen</span>
+      </div>
+      <div class="studio-actions" role="toolbar" aria-label="Export-Aktionen">
+        <button type="button" class="btn btn-primary" id="dlPng">⬇ PNG herunterladen</button>
+        <button type="button" class="btn" id="copyBtn">Bild kopieren</button>
+        <button type="button" class="btn" id="dlJpg">JPG herunterladen</button>
+        <button type="button" class="btn" id="dl2x">2x PNG <span class="pro-badge">PRO</span></button>
+        <button type="button" class="btn" id="zipBtn">Stapel-ZIP <span class="pro-badge">PRO</span></button>
+        <button type="button" class="btn btn-ghost" id="resetBtn">Zurücksetzen</button>
+      </div>
+      <div class="ad-slot horizontal" data-slot="below-tool"></div>
+    </div>
+
+    <aside class="studio-panel">
+      <details class="panel" open>
+        <summary>Quelle</summary>
+        <div class="panel-body">
+          <p class="src-info" id="srcInfo">Du siehst das <b>integrierte Beispiel</b>. Zieh dein eigenes Foto hierher, um es zu ersetzen.</p>
+          <div class="src-row">
+            <button type="button" class="btn btn-sm" id="uploadBtn">Foto hochladen</button>
+            <button type="button" class="btn btn-sm btn-ghost" id="useSample">Beispiel verwenden</button>
+          </div>
+          <div class="batch" id="batchList" aria-label="Geladene Fotos"></div>
+          <p class="sub-label">Ausgabegröße</p>
+          <div class="seg" id="sizeSeg" role="group" aria-label="Ausgabegröße">
+            <button type="button" data-value="square">Quadratisch</button>
+            <button type="button" data-value="portrait">Hochformat</button>
+            <button type="button" data-value="landscape">Querformat</button>
+            <button type="button" data-value="story">Story</button>
+          </div>
+          <p class="hint">Zieh mehrere Fotos hierher, um sie im Stapel einzurahmen (Pro).</p>
+        </div>
+      </details>
+
+      <details class="panel" open>
+        <summary>Rahmen</summary>
+        <div class="panel-body">
+          <div class="tiles frame-tiles" id="frameTiles" role="listbox" aria-label="Rahmenstile"></div>
+          <div id="colorRow">
+            <p class="sub-label">Rahmenfarbe</p>
+            <div class="swatches" id="colorChips" role="group" aria-label="Rahmenfarbe"></div>
+          </div>
+          <div class="ctl"><label for="shadow">Schatten</label><input type="range" id="shadow" min="0" max="100" step="1" value="55"><span class="v" id="shadowV">55</span></div>
+          <div class="ctl"><label for="frameScale">Rahmengröße</label><input type="range" id="frameScale" min="50" max="130" step="1" value="100"><span class="v" id="frameScaleV">100%</span></div>
+          <div class="ctl" id="matRow"><label for="mat">Passepartout-Breite</label><input type="range" id="mat" min="0" max="22" step="1" value="10"><span class="v" id="matV">10</span></div>
+          <div id="filmRow">
+            <p class="sub-label">Fotos auf dem Streifen</p>
+            <div class="seg" id="filmSeg" role="group" aria-label="Fotos auf dem Filmstreifen">
+              <button type="button" data-value="1">1</button>
+              <button type="button" data-value="2">2</button>
+              <button type="button" data-value="3">3</button>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="panel" open>
+        <summary>Foto</summary>
+        <div class="panel-body">
+          <div class="ctl"><label for="zoom">Zoom</label><input type="range" id="zoom" min="100" max="300" step="1" value="100"><span class="v" id="zoomV">100%</span></div>
+          <div class="ctl"><label for="rotate">Neigung</label><input type="range" id="rotate" min="-20" max="20" step="0.5" value="-4"><span class="v" id="rotateV">-4°</span></div>
+          <div class="switch-row"><span>Foto spiegeln<small>Horizontal spiegeln</small></span><label class="switch"><input type="checkbox" id="flip" aria-label="Foto spiegeln"><i></i></label></div>
+          <div class="row" style="margin-top:8px">
+            <button type="button" class="btn btn-sm" id="resetPan">Foto zentrieren</button>
+            <span class="hint" style="margin:0">Zum Verschieben auf der Fläche ziehen</span>
+          </div>
+        </div>
+      </details>
+
+      <details class="panel" open>
+        <summary>Hintergrund</summary>
+        <div class="panel-body">
+          <div class="tiles" id="bgTiles" role="listbox" aria-label="Hintergrundstile"></div>
+          <div class="inline-color" id="bgColorRow" style="margin-top:10px"><input type="color" id="bgColor" value="#f4efe6" aria-label="Hintergrundfarbe"><span class="hint" style="margin:0">Einfarbig</span></div>
+        </div>
+      </details>
+
+      <details class="panel" open>
+        <summary>Text</summary>
+        <div class="panel-body">
+          <div class="field compact" id="captionRow"><label for="caption">Bildunterschrift</label><input type="text" id="caption" placeholder="Goldene Stunde, 19:42 Uhr" maxlength="80"><p class="hint">Wird auf Sofortbildern, gestapelten Abzügen und dem Magazin-Cover angezeigt.</p></div>
+          <div class="seg" id="captionFont" role="group" aria-label="Schriftart der Bildunterschrift">
+            <button type="button" data-value="casual">Handschrift</button>
+            <button type="button" data-value="serif">Serif</button>
+            <button type="button" data-value="mono">Mono</button>
+          </div>
+          <div class="switch-row"><span>Datumsstempel<small>Oranges Datum wie bei Filmkameras in der Ecke</small></span><label class="switch"><input type="checkbox" id="dateStamp" aria-label="Datumsstempel"><i></i></label></div>
+          <div class="field compact" id="camRow"><label for="camStatus">Kamera-Statuszeile</label><input type="text" id="camStatus" placeholder="RAW 1/250 f/2.8 ISO 400" maxlength="60"></div>
+          <div class="field compact" id="magRow"><label for="magTitle">Magazintitel</label><input type="text" id="magTitle" placeholder="WANDER" maxlength="20"></div>
+        </div>
+      </details>
+
+      <details class="panel">
+        <summary>Rahmen-Presets</summary>
+        <div class="panel-body">
+          <div class="row">
+            <input type="text" id="presetName" placeholder="Name des Presets, z. B. Etsy-Angebot" maxlength="40" style="flex:1;min-width:0">
+            <button type="button" class="btn btn-sm" id="savePreset">Speichern</button>
+          </div>
+          <div class="preset-list" id="presetList"></div>
+          <p class="hint" id="presetHint">Kostenlos: 1 gespeichertes Preset · Pro: unbegrenzt</p>
+        </div>
+      </details>
+
+      <div class="ad-slot" data-slot="sidebar-1"></div>
+      <div class="card pro-card">
+        <h3>Pro holen <span class="pro-badge">LEBENSLANG</span></h3>
+        <ul>
+          <li>Kein Wasserzeichen auf Exporten</li>
+          <li>Retina-PNG-Export in 2x</li>
+          <li>6 Premium-Rahmen: Klebeband, Stapel, Monitor, Plakatwand, Magazin, TV</li>
+          <li>Stapel-Export als ZIP &amp; gespeicherte Presets</li>
+        </ul>
+        <button class="btn btn-primary btn-block" data-action="pro" data-arg="sidebar">Pro holen – einmalig <span data-pro-price>$9</span></button>
+      </div>
+      <div class="card lead-card" id="leadCard" hidden>
+        <h3>Jeden Monat neue Rahmen</h3>
+        <p class="hint">Neue Rahmen, Geräte und Präsentationstipps für Fotografen und Creator. Kein Spam.</p>
+        <form class="lead-form" data-action="newsletter">
+          <input type="email" name="email" required placeholder="du@email.com" aria-label="E-Mail-Adresse" autocomplete="email">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+          <button class="btn btn-primary" type="submit">Abonnieren</button>
+        </form>
+        <p class="hint tiny">Kein Spam. Jederzeit abbestellbar.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<section class="content container">
+  <div class="features">
+    <div class="feature"><div class="ic">📸</div><h3>Sofortbilder, die echt aussehen</h3><p>Klassische Abzugsproportionen 1:1.2, breiterer unterer Rand, handschriftliche Bildunterschrift und eine leichte Neigung. Weißes, cremefarbenes oder schwarzes Papier.</p></div>
+    <div class="feature"><div class="ic">📱</div><h3>Geräte-Mockups</h3><p>Smartphone mit Dynamic Island, Tablet im Querformat, Laptop mit Notch, dazu Schreibtisch-Monitor und Plakatwand in Pro. Space Grau, Silber oder Gold.</p></div>
+    <div class="feature"><div class="ic">🖼️</div><h3>Galerierahmen &amp; Film</h3><p>Holz-, schwarze oder weiße Leiste mit einstellbarem Passepartout, eine DSLR-Rückseite mit Live-Statuszeile und ein 35-mm-Streifen mit bis zu drei Fotos.</p></div>
+    <div class="feature"><div class="ic">🔒</div><h3>Privat by Design</h3><p>Jeder Rahmen wird auf einem Canvas in deinem Browser gezeichnet. Deine Fotos werden nie hochgeladen, und das Tool funktioniert offline.</p></div>
+  </div>
+
+  <h2>So erstellst du ein Foto im Polaroid-Stil</h2>
+  <p>Der Look eines Sofortbilds entsteht durch seine Proportionen, nicht durch einen Filter. Ein klassischer Abzug misst etwa 88 × 107 mm mit einem quadratischen Bildfenster von 79 mm – daraus ergibt sich das berühmte Kartenverhältnis 1:1.2, schmale Seitenränder und ein unterer Rand, der etwa viermal höher ist als der obere. Frame Lab bildet diese Verhältnisse exakt nach, sodass dein Foto wie ein echtes Objekt wirkt statt wie ein Foto mit aufgeklebtem weißem Rand.</p>
+  <ol>
+    <li><strong>Für das Quadrat zuschneiden.</strong> Zieh das Foto im Rahmen, bis das Motiv im Fenster sitzt, und nutze den Zoom-Regler, um enger zuzuschneiden. Gesichter und einzelne Objekte funktionieren am besten; bei weiten Landschaften geht der Horizont verloren.</li>
+    <li><strong>Schreib die Bildunterschrift wie von Hand.</strong> Halte sie kurz: ein Ort, ein Datum oder ein Insider-Witz. Die lockere Handschrift imitiert Marker auf Glanzpapier; wechsle zu Serif für einen edleren Magazin-Look oder zu Mono für Fotolabor-Feeling.</li>
+    <li><strong>Leicht neigen.</strong> Zwei bis sechs Grad reichen, damit es wie ein Abzug wirkt, der auf einen Schreibtisch gefallen ist. Ab zehn Grad wirkt es eher wie ein Scrapbook.</li>
+    <li><strong>Wähle einen Untergrund.</strong> Die Wand- und Schreibtisch-Hintergründe fügen einen weichen Schatten und eine Vignette hinzu, während du den Abzug mit „Transparent“ auf dein eigenes Design legen kannst.</li>
+  </ol>
+  <p>Schalte den Datumsstempel ein für die orange Markierung „'26 10 26“, die Film-Kompaktkameras in die Ecke belichtet haben, und probier den schwarzen Rahmen mit cremefarbener Bildunterschrift für einen Nachtaufnahmen-Look.</p>
+
+  <h2>Geräte-Mockups für App-Marketing</h2>
+  <p>App Stores, Landingpages und Product-Hunt-Galerien wollen alle Screenshots in einem Gerät, und die meisten Mockup-Tools kosten entweder ein Abo oder liefern ein Wasserzeichen in Smartphone-Größe. Die Smartphone-, Tablet- und Laptop-Rahmen in Frame Lab werden prozedural gezeichnet: keine lizenzierten Gerätefotos, scharfe Kanten in jeder Exportgröße und ein Bildschirm, der deinen Screenshot exakt ausfüllt. Wähle die Story-Größe für ein vertikales Smartphone-Bild, Querformat für ein Laptop-Hero-Bild und den Hintergrund mit weichgezeichnetem Foto, um die Farben deiner UI hinter dem Gerät aufzugreifen. Pro bietet zusätzlich einen Schreibtisch-Monitor und eine Plakatwand in Perspektive für Anzeigen- und Außenwerbungskonzepte.</p>
+
+  <h2>Tipps zum Einrahmen für Abzüge und Galerien</h2>
+  <p>Der Galerierahmen bildet nach, was ein Rahmenbauer bauen würde: eine Leiste, ein Passepartout und Glas. Ein Passepartout von 8–14 % der Rahmengröße passt zu den meisten Fotos; wähle es breiter für kleine, ruhige Bilder und schmaler für unruhige, kontrastreiche. Holzleisten machen Porträts und Streetfotografie wärmer, Schwarz passt zu Schwarzweiß-Arbeiten und Architektur, während Weiß auf einer weißen Wand verschwindet und das Bild den Raum tragen lässt. Halte den Schatten zwischen 40 und 60, damit der Rahmen aufgehängt statt schwebend wirkt, und nutze die Querformat-Größe, wenn du den Rahmen auf einem Wand-Mockup für ein Etsy-Angebot oder einen Print-Shop zeigst.</p>
+
+  <h2>Wo du deine Ergebnisse postest</h2>
+  <p><strong>Instagram-Karussells</strong> funktionieren gut mit einer Reihe von Sofortbildern, die dieselbe Schrift für die Bildunterschrift und denselben Hintergrund teilen; exportiere jedes in Quadratisch oder Hochformat, damit das Karussell nicht in der Höhe springt. <strong>Etsy- und Print-on-Demand-Angebote</strong> verkaufen besser, wenn das erste Bild den Abzug gerahmt an einer Wand zeigt – genau das liefert der Galerierahmen mit dem Wand-Hintergrund. <strong>Portfolios und Fallstudien</strong> profitieren von den Laptop- und Smartphone-Rahmen auf einem schlichten Verlauf, und der Filmstreifen ist eine schnelle Möglichkeit, eine Serie aus drei zusammengehörigen Aufnahmen in einem Bild zu präsentieren. <strong>Cover für Stories und Reels</strong> sollten die Story-Größe nutzen, damit die App nichts abschneidet.</p>
+
+  <h2>Deine Fotos bleiben auf deinem Gerät</h2>
+  <p>Frame Lab ist eine statische Seite. Wenn du ein Foto hineinziehst oder einfügst, wird es im Arbeitsspeicher dekodiert, zusammen mit Rahmen und Hintergrund auf einen Canvas gezeichnet und von deinem Browser wieder als PNG oder JPG kodiert. Es gibt keinen Upload-Endpunkt und kein serverseitiges Rendering, daher verlassen Familienfotos, unveröffentlichte Produktbilder und Kundenarbeiten nie deinen Computer. Deine Rahmeneinstellungen werden in <code>localStorage</code> gespeichert, damit sich das Tool genau so öffnet, wie du es verlassen hast.</p>
+
+  <h2>Häufig gestellte Fragen</h2>
+  <div class="faq">
+    <details><summary>Ist Frame Lab kostenlos?</summary><p>Ja. Die acht Basis-Rahmen, alle Hintergründe, Bildunterschrift und Datumsstempel, Zoom, Verschieben, Neigung und Export als PNG oder JPG in 1x sind kostenlos und ohne Anmeldung. Kostenlose Exporte tragen ein kleines Badge „Frame Lab · free“. Das optionale einmalige Pro-Upgrade entfernt es und bietet Export in 2x, sechs Premium-Rahmen, Stapel-Export als ZIP und gespeicherte Presets.</p></details>
+    <details><summary>Wie erstelle ich ein Foto im Polaroid-Stil?</summary><p>Wähle den Rahmen Sofortbild, zieh dein Foto hinein und verschiebe es, um das quadratische Fenster zuzuschneiden. Füge im unteren Rand eine kurze handschriftliche Bildunterschrift hinzu, neige den Rahmen um ein paar Grad und wähle einen Wand- oder Schreibtisch-Hintergrund. Der Rahmen nutzt das klassische Abzugsverhältnis 1:1.2 mit breiterem unterem Rand, sodass das Ergebnis wie ein echtes Sofortbild aussieht.</p></details>
+    <details><summary>Muss ich mein Foto hochladen?</summary><p>Nein. Frame Lab zeichnet jeden Rahmen mit der HTML5-Canvas-API in deinem Browser. Dein Foto verlässt nie dein Gerät, nichts wird auf einem Server gespeichert, und das Tool funktioniert auch offline, sobald die Seite geladen ist.</p></details>
+    <details><summary>Welche Rahmen und Geräte sind enthalten?</summary><p>Kostenlos: Sofortbild, Sofortbild mini, Smartphone mit Dynamic Island, Tablet, Laptop, Galerierahmen mit einstellbarem Passepartout, DSLR-Kameradisplay mit bearbeitbarer Statuszeile und ein 35-mm-Filmstreifen mit einem bis drei Fotos. Pro bietet zusätzlich einen schwebenden Abzug mit Klebeband, gestapelte Abzüge, einen Schreibtisch-Monitor, eine Plakatwand in Perspektive, ein Magazin-Cover und einen Vintage-Röhrenfernseher.</p></details>
+    <details><summary>Kann ich das Wasserzeichen entfernen?</summary><p>Ja. Die kostenlose Version fügt unten rechts ein kleines Badge „Frame Lab · free“ hinzu. Frame Lab Pro, ein Einmalkauf, entfernt das Badge aus jedem Export, auch aus Downloads in 2x und Stapel-ZIPs.</p></details>
+    <details><summary>In welcher Größe sollte ich für Instagram, Etsy oder ein Portfolio exportieren?</summary><p>Nutze Quadratisch (2000 × 2000) für Instagram-Feed-Posts und Etsy-Vorschaubilder, Hochformat (1600 × 2000, 4:5) für Feed-Posts, die mehr Bildschirmfläche einnehmen, Story (1080 × 1920) für Instagram- und TikTok-Stories und Querformat (2000 × 1500) für Portfolioseiten, Blog-Titelbilder und Präsentationen. Exportiere in 2x (Pro) für Retina-Bildschirme oder Druck.</p></details>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark lg" aria-hidden="true"></span>
+      <div>
+        <strong>Be Management Tools</strong>
+        <p>Eine Sammlung kostenloser, privater Tools, die komplett in deinem Browser laufen. Frame Lab ist das Tool der Familie für Fotos in echten Rahmen &amp; Geräten, entwickelt und betreut von Be Management.</p>
+      </div>
+    </div>
+    <div class="footer-tools">
+      <strong>Weitere kostenlose Tools</strong>
+      <ul>
+        <li><a href="https://quickinvoice-tool.vercel.app">QuickInvoice · Rechnungen</a></li>
+        <li><a href="https://ratecalc-tool.vercel.app">RateCalc · Freelancer-Stundensätze</a></li>
+        <li><a href="https://qrforge-tool.vercel.app">QRForge · QR-Codes</a></li>
+        <li><a href="https://squish-tool.vercel.app">Squish · Bildkomprimierung</a></li>
+        <li><a href="https://growthcalc-tool.vercel.app">GrowthCalc · Zinseszins</a></li>
+        <li><a href="https://subnetkit-tool.vercel.app">SubnetKit · IP-Subnetze</a></li>
+        <li><a href="https://shotstudio-tool.vercel.app">Screenshot Studio · Screenshot-Mockups</a></li>
+        <li><a href="https://mockuplab-tool.vercel.app">Social Mockup Lab · Chat- &amp; Post-Mockups</a></li>
+        <li><a href="https://carouselmaker-tool.vercel.app">Carousel Maker · Karussell-Slides</a></li>
+        <li><a href="https://creativeresize-tool.vercel.app">Creative Resize · Social-Media-Formate</a></li>
+        <li><a href="https://framelab-tool.vercel.app" class="current">Frame Lab · Fotorahmen &amp; Mockups</a></li>
+        <li><a href="https://giveaway-tool.vercel.app">Giveaway Picker · Instagram-Gewinnspiele</a></li>
+        <li><a href="https://iplookup-tool.vercel.app">IP Lookup · IP-Abfrage</a></li>
+        <li><a href="https://sizeconverter-tool.vercel.app">Size Converter · Bild- &amp; Video-Größenänderung</a></li>
+      </ul>
+    </div>
+    <div class="footer-meta">
+      <span>© <span data-year></span> Be Management · Frame Lab. Kostenlose Fotorahmen-Mockups. Nichts wird hochgeladen.</span>
+      <span><a href="/de/privacy" data-i18n-href="/de/privacy">Datenschutz</a> · <a href="/de/terms" data-i18n-href="/de/terms">Nutzungsbedingungen</a> · <a href="#" data-action="cookie-settings">Cookie-Einstellungen</a> · <a href="https://www.bemanagement.pro" rel="noopener">bemanagement.pro</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Pro modal -->
+<div class="modal" id="proModal" role="dialog" aria-modal="true">
+  <div class="card">
+    <button class="btn btn-sm close" data-action="close-pro">✕</button>
+    <h3>Upgrade auf Frame Lab Pro <span class="pro-badge">LEBENSLANG</span></h3>
+    <div class="price"><span id="proPrice"></span> <small>einmalig</small></div>
+    <ul>
+      <li>Ohne Wasserzeichen</li>
+      <li>Export in 2x</li>
+      <li>6 Premium-Rahmen</li>
+      <li>Stapel als ZIP</li>
+      <li>Gespeicherte Presets</li>
+      <li>Lebenslange Updates</li>
+    </ul>
+    <button class="btn btn-primary btn-block" data-action="checkout">Pro holen</button>
+    <p class="hint" style="margin-top:12px">Schon gekauft? <a href="#" data-action="toggle-license">Lizenzschlüssel eingeben</a></p>
+    <div class="row hidden" id="licenseRow"><input id="licenseKey" placeholder="Lizenzschlüssel"><button class="btn" data-action="activate-license">Aktivieren</button></div>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

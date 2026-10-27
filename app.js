@@ -66,11 +66,24 @@
     size: 'square'
   };
   const S = Studio.restore(STATE_KEY, DEF);
-  Object.keys(DEF).forEach(k => { if (typeof S[k] !== typeof DEF[k]) S[k] = DEF[k]; });
-  if (!FRAMES.some(f => f.id === S.frame) || (frameById(S.frame).pro && !isPro())) S.frame = 'instant';
-  if (!BGS.some(b => b.id === S.bg)) S.bg = 'wall';
-  if (!SIZES[S.size]) S.size = 'square';
-  S.filmCount = clamp(Math.round(S.filmCount), 1, 3);
+  const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+  // Restored state and presets are untrusted (localStorage): enforce types, enums, ranges, lengths.
+  const RANGES = { shadow: [0, 100], frameScale: [50, 130], mat: [0, 22], zoom: [100, 300], rotate: [-20, 20], panX: [-1, 1], panY: [-1, 1], filmCount: [1, 3] };
+  function sanitizeState(o) {
+    Object.keys(DEF).forEach(k => { if (typeof o[k] !== typeof DEF[k]) o[k] = DEF[k]; });
+    Object.keys(RANGES).forEach(k => { o[k] = Number.isFinite(o[k]) ? clamp(o[k], RANGES[k][0], RANGES[k][1]) : DEF[k]; });
+    o.filmCount = Math.round(o.filmCount);
+    if (!FRAMES.some(f => f.id === o.frame)) o.frame = DEF.frame;
+    if (!BGS.some(b => b.id === o.bg)) o.bg = DEF.bg;
+    if (!own(SIZES, o.size)) o.size = DEF.size;
+    if (!own(FONTS, o.captionFont)) o.captionFont = DEF.captionFont;
+    if (!/^#[0-9a-f]{6}$/i.test(o.bgColor)) o.bgColor = DEF.bgColor;
+    [['colorPrint', 'print'], ['colorGallery', 'gallery'], ['colorDevice', 'device']].forEach(([k, set]) => { if (!COLOR_SETS[set].some(c => c[0] === o[k])) o[k] = DEF[k]; });
+    ['caption', 'camStatus', 'magTitle'].forEach(k => { o[k] = o[k].slice(0, 200); });
+    return o;
+  }
+  sanitizeState(S);
+  if (frameById(S.frame).pro && !isPro()) S.frame = 'instant';
 
   // ---------- images ----------
   let sampleImg = null, items = [], current = 0;
@@ -635,7 +648,12 @@
 
   // ---------- presets ----------
   const STYLE_KEYS = Object.keys(DEF).filter(k => !['caption', 'camStatus', 'magTitle', 'panX', 'panY'].includes(k));
-  function loadPresets() { try { return JSON.parse(localStorage.getItem(PRESETS_KEY) || '[]'); } catch (e) { return []; } }
+  function loadPresets() {
+    const v = Studio.safeParse(localStorage.getItem(PRESETS_KEY) || '[]', []);
+    if (!Array.isArray(v)) return [];
+    return v.filter(p => p && typeof p === 'object' && p.style && typeof p.style === 'object').slice(0, 200)
+      .map(p => ({ name: String(p.name == null ? '' : p.name).slice(0, 60), style: sanitizeState(Studio.safeAssign({}, DEF, p.style)) }));
+  }
   function savePresets(p) { try { localStorage.setItem(PRESETS_KEY, JSON.stringify(p)); } catch (e) {} }
   function renderPresets() {
     const list = $('presetList'), ps = loadPresets(); list.innerHTML = '';
@@ -653,16 +671,17 @@
     $('presetHint').textContent = isPro() ? ps.length + ' saved preset' + (ps.length === 1 ? '' : 's') + ' · unlimited with Pro' : 'Free: 1 saved preset · Pro: unlimited';
   }
   function applyPreset(style) {
-    STYLE_KEYS.forEach(k => { if (k in style && typeof style[k] === typeof DEF[k]) S[k] = style[k]; });
+    STYLE_KEYS.forEach(k => { if (own(style, k) && typeof style[k] === typeof DEF[k]) S[k] = style[k]; });
+    sanitizeState(S);
     if (!FRAMES.some(f => f.id === S.frame)) S.frame = 'instant';
     if (frameById(S.frame).pro && !isPro()) S.frame = 'instant';
-    if (!BGS.some(b => b.id === S.bg)) S.bg = 'wall'; if (!SIZES[S.size]) S.size = 'square';
+    if (!BGS.some(b => b.id === S.bg)) S.bg = 'wall'; if (!own(SIZES, S.size)) S.size = 'square';
     syncAll(); update();
   }
   function savePreset() {
     const ps = loadPresets();
     if (!isPro() && ps.length >= 1) { openPro('presets'); return; }
-    const name = $('presetName').value.trim() || ('Frame ' + (ps.length + 1)), style = {};
+    const name = $('presetName').value.trim().slice(0, 60) || ('Frame ' + (ps.length + 1)), style = {};
     STYLE_KEYS.forEach(k => style[k] = S[k]);
     ps.push({ name, style }); savePresets(ps); $('presetName').value = ''; renderPresets(); toast('Preset saved'); track('preset_save', {});
   }
@@ -684,6 +703,7 @@
     if (files.length > 1 && !isPro()) { toast('Batch mode is a Pro feature – loading the first photo'); openPro('batch'); }
     const take = isPro() ? files.slice(0, 50) : files.slice(0, 1), loaded = [];
     for (const f of take) {
+      if (f.size > 100 * 1024 * 1024) { toast('Could not read ' + f.name); continue; } // size cap
       try { const img = await Studio.readImage(f); loaded.push({ img, name: f.name }); }
       catch (e) { toast('Could not read ' + f.name + (/heic|heif/i.test(f.name) ? ' (HEIC is not supported by browsers)' : '')); }
     }
@@ -697,7 +717,7 @@
     const has = items.length > 0;
     drop.classList.toggle('has-image', has);
     $('srcInfo').innerHTML = has
-      ? `<b>${items[current].name}</b> · ${items[current].img.width} × ${items[current].img.height}px${items.length > 1 ? ' · ' + items.length + ' loaded' : ''}`
+      ? `<b>${bmEsc(items[current].name)}</b> · ${items[current].img.width} × ${items[current].img.height}px${items.length > 1 ? ' · ' + items.length + ' loaded' : ''}`
       : 'Showing the <b>built-in sample</b>. Drop your own photo to replace it.';
     const list = $('batchList'); list.innerHTML = '';
     if (items.length > 1) items.forEach((it, i) => {
