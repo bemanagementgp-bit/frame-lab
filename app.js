@@ -92,23 +92,23 @@
   function currentItem() { return items.length ? items[current] : { img: sampleImg, name: 'sample' }; }
   function imgAt(offset) { if (items.length < 2) return currentItem().img; return items[(current + offset) % items.length].img; }
 
+  // Generic sample: a neutral "photo" placeholder — no text, brands or scenes, so the tool is what people look at.
+  function paintPlaceholder(x, w, h) {
+    const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#dcdde1'); g.addColorStop(1, '#c4c6cd');
+    x.fillStyle = g; x.fillRect(0, 0, w, h);
+    const s = Math.min(w, h) * 0.34, fw = s * 1.3, fh = s, fx = (w - fw) / 2, fy = (h - fh) / 2, r = s * 0.1;
+    x.beginPath(); x.moveTo(fx + r, fy); x.arcTo(fx + fw, fy, fx + fw, fy + fh, r); x.arcTo(fx + fw, fy + fh, fx, fy + fh, r);
+    x.arcTo(fx, fy + fh, fx, fy, r); x.arcTo(fx, fy, fx + fw, fy, r); x.closePath();
+    x.strokeStyle = '#a4a7b1'; x.lineWidth = Math.max(4, s * 0.035); x.lineJoin = 'round'; x.stroke();
+    x.save(); x.clip();
+    x.fillStyle = '#b5b8c0'; x.beginPath(); x.arc(fx + fw * 0.7, fy + fh * 0.32, s * 0.11, 0, Math.PI * 2); x.fill();
+    x.fillStyle = '#a4a7b1'; x.beginPath(); x.moveTo(fx, fy + fh); x.lineTo(fx + fw * 0.34, fy + fh * 0.46); x.lineTo(fx + fw * 0.58, fy + fh * 0.76);
+    x.lineTo(fx + fw * 0.74, fy + fh * 0.6); x.lineTo(fx + fw, fy + fh * 0.88); x.lineTo(fx + fw, fy + fh); x.closePath(); x.fill();
+    x.restore();
+  }
   function makeSample() {
-    const w = 1400, h = 1050, c = document.createElement('canvas'); c.width = w; c.height = h; const x = c.getContext('2d');
-    let g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, '#2b2d5e'); g.addColorStop(.42, '#b85a7c'); g.addColorStop(.68, '#ffb36b'); g.addColorStop(1, '#ffd9a0'); x.fillStyle = g; x.fillRect(0, 0, w, h);
-    g = x.createRadialGradient(w * 0.62, h * 0.6, 0, w * 0.62, h * 0.6, w * 0.42); g.addColorStop(0, 'rgba(255,235,180,.95)'); g.addColorStop(.3, 'rgba(255,190,120,.5)'); g.addColorStop(1, 'rgba(255,160,90,0)'); x.fillStyle = g; x.fillRect(0, 0, w, h);
-    x.fillStyle = '#fff3cf'; x.beginPath(); x.arc(w * 0.62, h * 0.6, w * 0.07, 0, Math.PI * 2); x.fill();
-    // soft clouds
-    x.fillStyle = 'rgba(255,255,255,.18)'; [[0.18, 0.22, 0.16], [0.42, 0.17, 0.11], [0.8, 0.26, 0.14]].forEach(([cx, cy, r]) => { x.beginPath(); x.ellipse(w * cx, h * cy, w * r, h * 0.035, 0, 0, Math.PI * 2); x.fill(); });
-    // mountain ridges, far to near
-    const layers = [[0.56, '#6a4472', 0.12, 1.3], [0.66, '#4b3058', 0.1, 1.9], [0.77, '#2f1f3e', 0.08, 2.6], [0.88, '#1b1226', 0.05, 3.4]];
-    layers.forEach(([base, col, amp, f], li) => {
-      x.fillStyle = col; x.beginPath(); x.moveTo(0, h);
-      for (let i = 0; i <= 60; i++) { const t = i / 60; const y = h * base - h * amp * (0.5 + 0.5 * Math.sin(t * 7 * f + li) * Math.cos(t * 3.7 + li * 2)) - h * 0.015 * Math.sin(t * 29 + li * 5); x.lineTo(t * w, y); }
-      x.lineTo(w, h); x.closePath(); x.fill();
-    });
-    // birds
-    x.strokeStyle = 'rgba(35,18,40,.75)'; x.lineWidth = 3; x.lineCap = 'round';
-    [[0.28, 0.3], [0.33, 0.27], [0.37, 0.32]].forEach(([bx, by]) => { x.beginPath(); x.moveTo(w * bx - 16, h * by); x.quadraticCurveTo(w * bx - 8, h * by - 10, w * bx, h * by); x.quadraticCurveTo(w * bx + 8, h * by - 10, w * bx + 16, h * by); x.stroke(); });
+    const w = 1400, h = 1050, c = document.createElement('canvas'); c.width = w; c.height = h;
+    paintPlaceholder(c.getContext('2d'), w, h);
     return c;
   }
 
